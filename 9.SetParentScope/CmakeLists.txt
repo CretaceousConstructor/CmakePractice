@@ -1,0 +1,20 @@
+cmake_minimum_required (VERSION 3.15)
+project ( hello_world_prj )
+
+function ( fun xxx )
+    set ( ${xxx} parent_value PARENT_SCOPE)
+    message ( STATUS "in function : xxx = ${xxx}") 
+endfunction ()
+
+message ( STATUS "in parent xxx 1 = ${xxx}" )
+fun( xxx )
+message ( STATUS "in parent xxx 2 = ${xxx}" )
+
+
+message ( STATUS "in parent yyy 1 = ${yyy}")
+fun( yyy )
+message ( STATUS "in parent yyy 2 = ${yyy}")
+
+message (STATUS "in parent OneFLOW 1 = ${OneFLOW}") 
+fun ( OneFLOW )
+message (STATUS "in parent OneFLOW 2 = ${OneFLOW}")
